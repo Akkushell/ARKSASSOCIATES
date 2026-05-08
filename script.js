@@ -15,3 +15,18 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+const whatsappButtons = document.querySelectorAll('.whatsapp-button');
+const whatsappPhone = '+918956527367'; // Replace with your WhatsApp number in international format without '+' sign
+
+if (whatsappButtons.length) {
+  whatsappButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const serviceName = button.getAttribute('data-service') || 'environmental service request';
+      const message = `Hello ARK'S ASSOCIATES, I am interested in ${serviceName}. Please share details and next steps for my project.`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  });
+}

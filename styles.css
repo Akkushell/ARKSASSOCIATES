@@ -344,6 +344,45 @@ textarea {
   color: #475569;
 }
 
+.services-cta {
+  padding: 3rem 0;
+  background: #ffffff;
+  border-top: 1px solid rgba(13, 148, 136, 0.12);
+}
+
+.services-cta .button {
+  margin-top: 1.5rem;
+}
+
+.services-page {
+  padding: 3rem 0;
+}
+
+.services-page .service-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-1px);
+  background: #1eb954;
+}
+
 .about {
   padding: 3rem 0;
 }
