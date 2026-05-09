@@ -17,7 +17,7 @@ if (contactForm) {
 }
 
 const whatsappButtons = document.querySelectorAll('.whatsapp-button');
-const whatsappPhone = '+918956527367'; // Replace with your WhatsApp number in international format without '+' sign
+const whatsappPhone = '918956527367';
 
 if (whatsappButtons.length) {
   whatsappButtons.forEach((button) => {
@@ -28,5 +28,28 @@ if (whatsappButtons.length) {
       const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
       window.open(whatsappUrl, '_blank');
     });
+  });
+}
+
+const contactForm = document.getElementById('whatsapp-contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = contactForm.querySelector('input[name="name"]').value;
+    const email = contactForm.querySelector('input[name="email"]').value;
+    const phone = contactForm.querySelector('input[name="phone"]').value || 'Not provided';
+    const project = contactForm.querySelector('select[name="project_type"]').value;
+    const message = contactForm.querySelector('textarea[name="message"]').value;
+    
+    const text = `*New Project Inquiry - ARK'S ASSOCIATES*%0A%0A` +
+                 `*Name:* ${name}%0A` +
+                 `*Email:* ${email}%0A` +
+                 `*Phone:* ${phone}%0A` +
+                 `*Service:* ${project}%0A` +
+                 `*Details:* ${message}`;
+    
+    window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`, '_blank');
+    contactForm.reset();
   });
 }

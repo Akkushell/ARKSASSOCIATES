@@ -36,7 +36,7 @@
       <div class="container hero-grid">
         <div class="hero-left">
           <div class="hero-branding">
-            <img src="logo1.jpg" alt="ARK'S ASSOCIATES logo" class="hero-logo-image" />
+            <img src="LOGO1.jpg" alt="ARK'S ASSOCIATES logo" class="hero-logo-image" />
             <div>
               <p class="hero-brand-name">ARK'S ASSOCIATES</p>
               <p class="hero-brand-tag">CPCB, SPCB, CGWA, STP, ETP &amp; ZLD Consulting</p>
@@ -169,28 +169,6 @@
             </label>
             <button type="submit" class="button button-primary">Submit Inquiry</button>
           </form>
-          <script>
-              document.getElementById('whatsapp-contact-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = this.name.value;
-                const email = this.email.value;
-                const phone = this.phone.value || 'Not provided';
-                const project = this.project_type.value;
-                const message = this.message.value;
-                
-                const whatsappNumber = "918956527367";
-                const text = `*New Project Inquiry - ARK'S ASSOCIATES*%0A%0A` +
-                             `*Name:* ${name}%0A` +
-                             `*Email:* ${email}%0A` +
-                             `*Phone:* ${phone}%0A` +
-                             `*Service:* ${project}%0A` +
-                             `*Details:* ${message}`;
-                
-                window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-              });
-            </script>
-
         </div>
       </div>
     </section>
