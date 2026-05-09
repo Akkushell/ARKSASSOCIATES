@@ -132,10 +132,10 @@
             <ul style="list-style: none; padding: 0; margin: 1rem 0 0;">
               <li style="margin-bottom: 0.85rem; color: #334155;"><strong style="color: #0d9488;">Email:</strong> arksassociates01@gmail.com</li>
               <li style="margin-bottom: 0.85rem; color: #334155;"><strong style="color: #0d9488;">Phone:</strong> +91 89565 27367</li>
-              <li style="margin-bottom: 0.85rem; color: #334155;"><strong style="color: #0d9488;">Response Time:</strong> Within 24-48 hours</li>
+              <li style="margin-bottom: 0.85rem; color: #334155;"><strong style="color: #0d9488;">Response Time:</strong> Within 24 hours</li>
             </ul>
           </div>
-          <form class="contact-form">
+          <form class="contact-form" id="whatsapp-contact-form">
             <h3 style="margin-top: 0; color: #0f172a; font-size: 1.1rem;">Project Inquiry Form</h3>
             <label>
               Full Name
@@ -151,7 +151,7 @@
             </label>
             <label>
               Project Type
-              <select name="project-type" required style="width: 100%; border: 1px solid rgba(13, 148, 136, 0.2); border-radius: 0.85rem; padding: 0.95rem 1rem; background: #f0fdfa; color: #0f172a; font-family: inherit;">
+              <select name="project_type" required style="width: 100%; border: 1px solid rgba(13, 148, 136, 0.2); border-radius: 0.85rem; padding: 0.95rem 1rem; background: #f0fdfa; color: #0f172a; font-family: inherit;">
                 <option value="">Select a service...</option>
                 <option value="CPCB-SPCB">CPCB/SPCB Consent Clearance</option>
                 <option value="CGWA">CGWA Groundwater NOC</option>
@@ -168,6 +168,28 @@
             </label>
             <button type="submit" class="button button-primary">Submit Inquiry</button>
           </form>
+          <script>
+              document.getElementById('whatsapp-contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = this.name.value;
+                const email = this.email.value;
+                const phone = this.phone.value || 'Not provided';
+                const project = this.project_type.value;
+                const message = this.message.value;
+                
+                const whatsappNumber = "918956527367";
+                const text = `*New Project Inquiry - ARK'S ASSOCIATES*%0A%0A` +
+                             `*Name:* ${name}%0A` +
+                             `*Email:* ${email}%0A` +
+                             `*Phone:* ${phone}%0A` +
+                             `*Service:* ${project}%0A` +
+                             `*Details:* ${message}`;
+                
+                window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+              });
+            </script>
+
         </div>
       </div>
     </section>
