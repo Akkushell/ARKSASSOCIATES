@@ -119,21 +119,23 @@ textarea {
 }
 
 .book-appointment-btn {
-  background: var(--primary) !important;
+  background: linear-gradient(90deg, var(--primary) 0%, #0a7a6f 100%) !important;
   color: #ffffff !important;
   padding: 0.75rem 1.25rem !important;
   border-radius: 999px !important;
   border: none !important;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
-  transition: transform 160ms ease, background-color 160ms ease !important;
+  transition: transform 160ms ease !important;
   margin-left: 1rem !important;
   position: relative !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
 }
 
 .book-appointment-btn:hover {
-  background: linear-gradient(135deg, #0d9488 0%, #0a7a6f 100%) !important;
   transform: translateY(-2px) !important;
+  animation: flowRight 0.6s ease forwards !important;
 }
 
 .book-appointment-btn::after {
@@ -246,19 +248,31 @@ textarea {
   border: 1px solid transparent;
   font-weight: 600;
   transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  background-size: 200% 100%;
+  background-position: right center;
 }
 
 .button:hover {
   transform: translateY(-1px);
+  animation: flowRight 0.6s ease forwards;
+}
+
+@keyframes flowRight {
+  0% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
 }
 
 .button-primary {
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary) 0%, #0a7a6f 100%);
   color: #ffffff;
 }
 
 .button-secondary {
-  background: #ecfeff;
+  background: linear-gradient(90deg, #ecfeff 0%, #7dd3fc 100%);
   color: #0f172a;
   border-color: #7dd3fc;
 }
@@ -380,7 +394,7 @@ textarea {
   padding: 1rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
-  background: linear-gradient(135deg, #25d366 0%, #22c55e 100%);
+  background: linear-gradient(90deg, #25d366 0%, #22c55e 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.98rem;
@@ -389,12 +403,23 @@ textarea {
   text-transform: uppercase;
   box-shadow: 0 18px 30px rgba(37, 211, 102, 0.18);
   transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  background-size: 200% 100%;
+  background-position: right center;
 }
 
 .whatsapp-button:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #1eb954 0%, #16a34a 100%);
   box-shadow: 0 22px 36px rgba(37, 211, 102, 0.24);
+  animation: flowRightWhatsapp 0.6s ease forwards;
+}
+
+@keyframes flowRightWhatsapp {
+  0% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
 }
 
 .about {
