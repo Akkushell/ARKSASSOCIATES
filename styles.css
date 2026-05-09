@@ -45,7 +45,7 @@ textarea {
   background: var(--surface);
   border-bottom: 2px solid var(--primary);
   position: sticky;
-  top: 3.5rem;
+  top: 0;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(13, 148, 136, 0.08);
 }
@@ -116,6 +116,28 @@ textarea {
 
 .site-nav a:hover::after {
   width: 100%;
+}
+
+.book-appointment-btn {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 999px !important;
+  border: none !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  transition: transform 160ms ease, background-color 160ms ease !important;
+  margin-left: 1rem !important;
+  position: relative !important;
+}
+
+.book-appointment-btn:hover {
+  background: linear-gradient(135deg, #0d9488 0%, #0a7a6f 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+.book-appointment-btn::after {
+  display: none !important;
 }
 
 .nav-toggle {
