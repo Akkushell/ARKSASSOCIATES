@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #0f172a;
@@ -23,7 +23,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #0f172a;
@@ -54,15 +54,16 @@ select {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-  transition: background 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  transition: background 220ms ease, box-shadow 220ms ease, border-color 220ms ease, transform 220ms ease;
 }
 
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.98);
   border-color: rgba(13, 148, 136, 0.18);
   box-shadow: 0 22px 50px rgba(15, 23, 42, 0.15);
+  transform: translateY(0);
 }
 
 .header-inner {
@@ -70,8 +71,8 @@ select {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  min-height: 84px;
-  padding: 0.8rem 0;
+  min-height: 88px;
+  padding: 0.95rem 0;
 }
 
 .brand {
@@ -102,28 +103,31 @@ select {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.1rem;
   margin-left: auto;
 }
 
 .site-nav a {
   color: #334155;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   position: relative;
-  transition: color 200ms ease;
+  opacity: 0.9;
+  transition: color 200ms ease, opacity 200ms ease;
 }
 
 .site-nav a:hover {
   color: #0d9488;
+  opacity: 1;
 }
 
 .site-nav a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 0;
   width: 0;
   height: 2px;
@@ -135,20 +139,37 @@ select {
   width: 100%;
 }
 
+.button-pill,
 .book-appointment-btn {
   background: #0d9488 !important;
   color: #ffffff !important;
-  padding: 0.8rem 1.25rem !important;
+  padding: 0.9rem 1.6rem !important;
   border-radius: 999px !important;
   border: none !important;
   font-weight: 700 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.95rem !important;
   transition: transform 160ms ease !important;
   margin-left: 1rem !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
+.site-nav a.button-pill {
+  margin-left: 0.75rem !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button-pill::before,
 .book-appointment-btn::before {
   content: '' !important;
   position: absolute !important;
@@ -161,10 +182,12 @@ select {
   z-index: -1 !important;
 }
 
+.button-pill:hover,
 .book-appointment-btn:hover {
   transform: translateY(-2px) !important;
 }
 
+.button-pill:hover::before,
 .book-appointment-btn:hover::before {
   left: 0 !important;
 }
@@ -184,15 +207,54 @@ select {
 
 .nav-toggle span {
   display: block;
-  width: 26px;
-  height: 2.5px;
-  margin: 6px 0;
+  width: 28px;
+  height: 3px;
+  margin: 7px 0;
   background: #0d9488;
   border-radius: 999px;
 }
 
 .hero {
   padding: 5rem 0 3rem;
+}
+
+.hero-banner {
+  background: linear-gradient(180deg, rgba(5, 95, 82, 0.82), rgba(2, 132, 199, 0.64)), url('https://kordeenviro.com/wp-content/uploads/2026/04/about-korde-enviroment.webp') center top/cover no-repeat;
+  color: #ffffff;
+}
+
+.hero-banner .hero-copy,
+.hero-banner .hero-highlights {
+  color: #ffffff;
+}
+
+.hero-banner .button-secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.hero-banner .hero-visual-card,
+.hero-banner .hero-card-header {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-banner .hero-visual-card {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.hero-banner .hero-pill {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.hero-banner .hero-text {
+  color: #f8fafc;
+}
+
+.hero-banner .hero-highlights div {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 .hero-glow {
@@ -206,10 +268,107 @@ select {
   align-items: center;
 }
 
+.hero-banner {
+  padding: 6rem 0 4rem;
+  min-height: 88vh;
+  display: grid;
+  align-items: center;
+}
+
+.hero-banner .hero-grid {
+  grid-template-columns: 1.05fr 0.95fr;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.hero-banner .hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 760px;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-banner .hero-actions {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-banner .hero-highlights {
+  width: min(820px, 100%);
+}
+
+.hero-banner .hero-visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-banner .hero-copy h1 {
+  font-size: clamp(3.2rem, 5.5vw, 4.6rem);
+  line-height: 1.03;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.hero-banner .hero-text {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-banner .hero-actions {
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-banner .hero-highlights {
+  width: min(840px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.hero-banner .hero-highlights div {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1.3rem 1rem;
+}
+
+.hero-banner .hero-visual {
+  width: 100%;
+  max-width: 860px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-banner .hero-visual-card {
+  width: min(640px, 100%);
+  margin: 0 auto;
+}
+
 .hero-copy {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.hero-banner .hero-copy {
+  align-items: center;
 }
 
 .hero h1 {
@@ -284,9 +443,11 @@ select {
 }
 
 .button-pill {
-  padding: 0.85rem 1.3rem;
+  padding: 0.85rem 1.6rem;
   background: #0d9488;
   color: #ffffff;
+  border: none;
+  box-shadow: 0 18px 35px rgba(13, 148, 136, 0.18);
 }
 
 .hero-highlights {
@@ -306,13 +467,13 @@ select {
 .hero-highlights strong {
   display: block;
   font-size: 1.4rem;
-  color: #0f172a;
+  color: #f8faff;
 }
 
 .hero-highlights span {
   display: block;
   margin-top: 0.35rem;
-  color: #475569;
+  color: #fafcff;
 }
 
 .hero-visual {
@@ -791,6 +952,11 @@ body.page-loaded {
     flex-direction: column;
     gap: 0.75rem;
     display: none;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    margin-top: 0.75rem;
   }
 
   .nav-toggle {
@@ -799,6 +965,7 @@ body.page-loaded {
 
   .site-nav.active {
     display: flex;
+    animation: slideDown 220ms ease;
   }
 
   .hero-highlights {
@@ -826,90 +993,7 @@ body.page-loaded {
   }
 }
 
-.brand:hover {
-  opacity: 0.8;
-}
 
-.brand-logo {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  border-radius: 0.5rem;
-}
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  margin-left: auto;
-}
-
-.site-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  position: relative;
-  transition: color 200ms ease;
-}
-
-.site-nav a:hover {
-  color: var(--primary);
-}
-
-.site-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 200ms ease;
-}
-
-.site-nav a:hover::after {
-  width: 100%;
-}
-
-.book-appointment-btn {
-  background: #0a7a6f !important;
-  color: #ffffff !important;
-  padding: 0.75rem 1.25rem !important;
-  border-radius: 999px !important;
-  border: none !important;
-  font-weight: 700 !important;
-  font-size: 0.9rem !important;
-  transition: transform 160ms ease !important;
-  margin-left: 1rem !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.book-appointment-btn::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: -100% !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: #055d52 !important;
-  transition: left 0.5s ease !important;
-  z-index: -1 !important;
-}
-
-.book-appointment-btn:hover {
-  transform: translateY(-2px) !important;
-}
-
-.book-appointment-btn:hover::before {
-  left: 0 !important;
-}
-
-.book-appointment-btn::after {
-  display: none !important;
-}
 
 .nav-toggle {
   display: none;
@@ -1369,3 +1453,4 @@ body.page-loaded {
     display: flex;
   }
 }
+
