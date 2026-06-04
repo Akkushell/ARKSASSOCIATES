@@ -14,7 +14,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <img src="LOGO1.jpg" alt="ARK'S ASSOCIATES logo" class="brand-logo" />
-        ARK'S ASSOCIATES
+        <span>ARK'S ASSOCIATES</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span>
@@ -25,41 +25,52 @@
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="top">
+    <section class="hero section hero-glow" id="top">
       <div class="container hero-grid">
-        <div class="hero-left">
-          <div class="hero-branding">
-            <img src="LOGO1.jpg" alt="ARK'S ASSOCIATES logo" class="hero-logo-image" />
-            <div>
-              <p class="hero-brand-name">ARK'S ASSOCIATES</p>
-              <p class="hero-brand-tag">Detailed service support for CPCB | SPCB | CGWA | STP | ETP & ZLD</p>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Our Services</p>
+          <h1>Streamlined environmental and regulatory support.</h1>
+          <p class="hero-text">Connect with our team via WhatsApp for fast consultation on CPCB, SPCB, CGWA, STP, ETP and ZLD needs. We help you secure approvals and build compliant water treatment systems.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="index.html">Back to Home</a>
+            <a class="button button-secondary" href="#services-list">View Services</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-visual-card">
+            <div class="hero-card-header">
+              <span class="hero-pill">Service Menu</span>
+              <p>Review our service offerings and start a direct WhatsApp inquiry for your project requirements.</p>
+            </div>
+            <div class="hero-feature-list">
+              <div>CPCB/SPCB Consent Clearance</div>
+              <div>CGWA Groundwater NOC</div>
+              <div>STP, ETP and ZLD Engineering</div>
+              <div>Operation & Maintenance Support</div>
+            </div>
+            <div class="hero-card-footer">
+              <span>Start with project details now</span>
+              <a class="button button-outline" href="contact.html">Contact Us</a>
             </div>
           </div>
-          <div>
-            <p class="eyebrow">Our Services</p>
-            <h1>Streamlined Environmental & Regulatory Services</h1>
-            <p class="hero-text">Connect with our expert team instantly via WhatsApp. Each service includes a direct messaging option for prompt consultations on your CPCB, SPCB, CGWA, STP, ETP & ZLD requirements.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="index.html">Back to Home</a>
-              <a class="button button-secondary" href="#services-list">View Services</a>
-            </div>
-          </div>
+          <div class="hero-shape hero-shape-1"></div>
+          <div class="hero-shape hero-shape-2"></div>
         </div>
       </div>
     </section>
 
-    <section class="services-page" id="services-list">
+    <section class="section services-page reveal" id="services-list">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Our Expertise</p>
-          <h2>Targeted Solutions for Environmental Compliance</h2>
-          <p class="services-intro">Explore our specialized services for regulatory approvals, water treatment systems, and groundwater management. Each service includes a direct WhatsApp inquiry button that prefills your message, ensuring our team can provide a prompt and precise response with project recommendations and timelines.</p>
+          <h2>Targeted solutions for environmental compliance.</h2>
+          <p class="section-copy">Explore services designed to simplify approval workflows, optimize treatment systems and protect groundwater. Each solution includes direct WhatsApp contact for rapid consultation.</p>
         </div>
 
         <div class="service-grid">
@@ -68,8 +79,8 @@
               <span class="service-icon">✓</span>
               <h3>Sewage Treatment Plant (STP)</h3>
             </div>
-            <p>End-to-end STP solutions for residential, commercial and industrial applications. We cover process selection, civil layout, biological treatment design, commissioning support, compliance with CPCB/SPCB norms and post-installation performance monitoring.</p>
-            <button type="button" class="whatsapp-button" data-service="Sewage Treatment Plant (STP)">Inquiry - Sewage Treatment Plant (STP)</button>
+            <p>End-to-end STP solutions for residential, commercial and industrial applications. We cover process selection, civil layout, biological treatment design, commissioning support, compliance and performance tracking.</p>
+            <button type="button" class="whatsapp-button" data-service="Sewage Treatment Plant (STP)">Inquiry - STP</button>
           </article>
 
           <article class="service-card">
@@ -77,8 +88,8 @@
               <span class="service-icon">✓</span>
               <h3>Effluent Treatment Plant (ETP)</h3>
             </div>
-            <p>Specialized ETP design and implementation for industrial wastewater streams. Our service includes process selection, equalization, biological and chemical treatment, sludge handling, discharge quality assurance, and CPCB/SPCB consent support.</p>
-            <button type="button" class="whatsapp-button" data-service="Effluent Treatment Plant (ETP)">Inquiry - Effluent Treatment Plant (ETP)</button>
+            <p>Specialized ETP engineering for industrial wastewater streams. Our service includes equalization, biological and chemical treatment, sludge handling, discharge quality assurance and consent support.</p>
+            <button type="button" class="whatsapp-button" data-service="Effluent Treatment Plant (ETP)">Inquiry - ETP</button>
           </article>
 
           <article class="service-card">
@@ -86,8 +97,8 @@
               <span class="service-icon">✓</span>
               <h3>Zero Liquid Discharge (ZLD)</h3>
             </div>
-            <p>Comprehensive ZLD engineering to minimize waste and recover water from industrial effluents. We design concentration, evaporation, thermal and mechanical recovery systems, plus a complete recycle strategy to meet zero discharge goals.</p>
-            <button type="button" class="whatsapp-button" data-service="Zero Liquid Discharge (ZLD)">Inquiry - Zero Liquid Discharge (ZLD)</button>
+            <p>Comprehensive ZLD engineering to minimize wastewater and recover water from industrial streams. We design concentration, evaporation, recovery and recycling systems for zero discharge compliance.</p>
+            <button type="button" class="whatsapp-button" data-service="Zero Liquid Discharge (ZLD)">Inquiry - ZLD</button>
           </article>
 
           <article class="service-card">
@@ -95,8 +106,8 @@
               <span class="service-icon">✓</span>
               <h3>Operation & Maintenance</h3>
             </div>
-            <p>Reliable O&M support for STP, ETP, ZLD, RO and filtration systems. Our team provides planned maintenance, troubleshooting, process optimization, operator training and regular performance audits to maximize uptime and regulatory compliance.</p>
-            <button type="button" class="whatsapp-button" data-service="Operation & Maintenance">Inquiry - Operation & Maintenance</button>
+            <p>Reliable O&M support for STP, ETP, ZLD, RO and filtration systems. We deliver maintenance planning, operator training, troubleshooting and performance audits to maximize uptime.</p>
+            <button type="button" class="whatsapp-button" data-service="Operation & Maintenance">Inquiry - O&M</button>
           </article>
 
           <article class="service-card">
@@ -104,8 +115,8 @@
               <span class="service-icon">✓</span>
               <h3>Ground Water (CGWA) NOC</h3>
             </div>
-            <p>CGWA groundwater permission services including hydrogeological survey, borewell assessment, drilling plan review, yield analysis and application management for safe abstraction and regulatory approval.</p>
-            <button type="button" class="whatsapp-button" data-service="Ground Water (CGWA) NOC">Inquiry - Ground Water (CGWA) NOC</button>
+            <p>CGWA groundwater permission services including surveys, borewell assessments, drilling reviews, yield analysis and application management for safe abstraction and approval.</p>
+            <button type="button" class="whatsapp-button" data-service="Ground Water (CGWA) NOC">Inquiry - CGWA NOC</button>
           </article>
 
           <article class="service-card">
@@ -113,8 +124,8 @@
               <span class="service-icon">✓</span>
               <h3>CPCB/SPCB Consent Clearance</h3>
             </div>
-            <p>Full CPCB/SPCB consent services for Consent to Establish, Consent to Operate and renewals. We prepare compliance documentation, monitoring plans, supporting reports and liaison with authorities to improve approval timelines.</p>
-            <button type="button" class="whatsapp-button" data-service="CPCB/SPCB Consent Clearance">Inquiry - CPCB/SPCB Consent Clearance</button>
+            <p>Complete CPCB/SPCB consent services for establish and operate approvals. We prepare documentation, monitoring plans, supporting reports and regulatory liaison to speed approval.</p>
+            <button type="button" class="whatsapp-button" data-service="CPCB/SPCB Consent Clearance">Inquiry - Consent</button>
           </article>
 
           <article class="service-card">
@@ -122,8 +133,8 @@
               <span class="service-icon">✓</span>
               <h3>Environmental Clearance</h3>
             </div>
-            <p>Environmental clearance support with EIA study coordination, statutory submissions, compliance verification and public hearing assistance. We guide projects through state and central clearance requirements for sustainable development.</p>
-            <button type="button" class="whatsapp-button" data-service="Environmental Clearance">Inquiry - Environmental Clearance</button>
+            <p>Environmental clearance support with EIA coordination, statutory submissions, compliance verification and public hearing assistance for sustainable project delivery.</p>
+            <button type="button" class="whatsapp-button" data-service="Environmental Clearance">Inquiry - Clearance</button>
           </article>
 
           <article class="service-card">
@@ -131,10 +142,20 @@
               <span class="service-icon">✓</span>
               <h3>Water Treatment Systems</h3>
             </div>
-            <p>Technical consulting for RO, softener, filtration, dosing and packaged water treatment systems. Our team helps select equipment, optimize process flow, manage procurement and ensure treated water quality for reuse or potable use.</p>
-            <button type="button" class="whatsapp-button" data-service="Water Treatment Systems">Inquiry - Water Treatment Systems</button>
+            <p>Consulting for RO, softening, filtration, dosing and packaged water treatment systems. We support equipment selection, optimization and handover for reliable treated water quality.</p>
+            <button type="button" class="whatsapp-button" data-service="Water Treatment Systems">Inquiry - Water Treatment</button>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section cta-banner reveal">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow">Need faster support?</p>
+          <h2>Share your project details and receive a rapid WhatsApp response.</h2>
+        </div>
+        <a class="button button-primary" href="contact.html">Contact Us</a>
       </div>
     </section>
   </main>
@@ -145,6 +166,10 @@
     </div>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/918956527367" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
+    <span>💬</span>
+    WhatsApp
+  </a>
   <script src="script.js"></script>
 </body>
 </html>
