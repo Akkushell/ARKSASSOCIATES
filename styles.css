@@ -335,7 +335,7 @@ select {
   justify-content: flex-end;
 }
 
-..hero-banner .hero-copy h1 {
+.hero-banner .hero-copy h1 {
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   line-height: 1.05;
   font-weight: 800;
@@ -382,6 +382,66 @@ select {
   justify-content: center;
   text-align: center;
   padding: 0.85rem 0.7rem;
+}
+
+.contact-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.contact-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  flex: 1 1 min(260px, 48%);
+  min-width: 260px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.14);
+  border-radius: 1.25rem;
+  padding: 1rem 1.4rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+.contact-badge span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: #d1fae5;
+  font-size: 1.15rem;
+}
+
+.contact-badge strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: #0d9488;
+}
+
+.contact-badge p {
+  margin: 0;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-badge a {
+  color: #0d9488;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-badge a:hover {
+  text-decoration: underline;
 }
 
 .hero-banner .hero-visual {
@@ -858,10 +918,17 @@ select {
   line-height: 1.75;
 }
 
+.contact-card-compact ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 1rem;
+  color: #334155;
+}
+
 .contact-map {
   margin-top: 2rem;
-  background: linear-gradient(180deg, #f8fffb 0%, #ecfdf5 100%);
-  border: 1px solid rgba(13, 148, 136, 0.14);
+  background: linear-gradient(180deg, #f8fffb 0%, #d8f3e7 100%);
+  border: 1px solid rgba(13, 148, 136, 0.18);
   border-radius: 1.75rem;
   min-height: 360px;
   display: grid;
@@ -870,9 +937,30 @@ select {
   font-weight: 700;
   text-align: center;
   padding: 2.5rem;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
 }
 
+.contact-map p {
+  max-width: 360px;
+  margin: 0;
+}
+
+.contact-map p + p {
+  margin-top: 0.85rem;
+}
+
+.contact-map a {
+  color: #0d9488;
+  text-decoration: none;
+  font-weight: 800;
+  border-bottom: 2px solid rgba(13, 148, 136, 0.4);
+  padding-bottom: 2px;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.contact-map a:hover {
+  color: #055d52;
+  border-color: #055d52;
 .contact-map span {
   display: inline-flex;
   align-items: center;
@@ -1291,6 +1379,10 @@ body.page-loaded {
   .feature-card p,
   .service-card p {
     font-size: 0.95rem;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
   }
 }
 
