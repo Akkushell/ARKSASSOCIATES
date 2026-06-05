@@ -695,7 +695,7 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .service-card {
@@ -710,6 +710,8 @@ select {
   gap: 0.9rem;
   align-items: center;
   text-align: center;
+  height: 100%;
+  min-height: 360px;
 }
 
 .service-card:hover {
@@ -717,6 +719,15 @@ select {
   box-shadow: 0 30px 80px rgba(15,23,42,0.12);
   border-color: rgba(13,148,136,0.9);
   background: rgba(13,148,136,0.25);
+}
+
+/* Ensure smooth fade for hover states */
+.service-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 320ms ease, border-color 320ms ease;
+}
+
+.service-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease;
 }
 
 .service-card-head {
@@ -754,7 +765,7 @@ select {
 }
 
 .service-card .whatsapp-button {
-  margin-top: 0.8rem;
+  margin-top: auto;
   align-self: center;
   padding: 0.85rem 1.1rem;
   text-align: center;
@@ -764,6 +775,9 @@ select {
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .service-card {
+    min-height: 320px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -772,6 +786,95 @@ select {
   }
   .service-card {
     padding: 1rem;
+    min-height: auto;
+  }
+}
+
+/* Mobile / smartphone improvements */
+@media (max-width: 480px) {
+  :root {
+    font-size: 15px;
+  }
+  .hero-banner {
+    min-height: auto;
+    padding: 1.25rem 0 1rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .hero-banner .hero-copy {
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .hero-banner .hero-copy h1 {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+    line-height: 1.15;
+  }
+  .hero-banner .hero-text {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .hero-banner .hero-visual {
+    display: none;
+  }
+  .hero-banner .hero-actions .button {
+    width: 100%;
+    max-width: 360px;
+    margin: 0.4rem auto 0;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .service-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+    padding: 0 0.4rem;
+  }
+  .cta-inner {
+    padding: 1rem;
+  }
+  .header-inner {
+    min-height: 68px;
+    padding: 0.6rem 0;
+  }
+  .site-nav a.button-pill {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-block;
+  }
+  .site-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: min(320px, 85%);
+    background: #ffffff;
+    box-shadow: -8px 0 30px rgba(15,23,42,0.12);
+    transform: translateX(110%);
+    transition: transform 280ms ease;
+    padding: 3.5rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 40;
+  }
+  .site-nav.active {
+    transform: translateX(0);
+  }
+  .site-nav a {
+    color: #0f172a;
+    padding: 0.75rem 0.5rem;
+    display: block;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(13,148,136,0.04);
   }
 }
 
