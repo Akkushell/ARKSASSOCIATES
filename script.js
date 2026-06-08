@@ -4,7 +4,9 @@ const whatsappPhone = '918956527367';
 
 if (navToggle && siteNav) {
   navToggle.addEventListener('click', () => {
-    siteNav.classList.toggle('active');
+    const isOpen = siteNav.classList.toggle('active');
+    document.body.classList.toggle('nav-open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 }
 
@@ -24,6 +26,8 @@ navLinks.forEach((link) => {
     }
     if (siteNav.classList.contains('active')) {
       siteNav.classList.remove('active');
+      document.body.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     }
   });
 });
