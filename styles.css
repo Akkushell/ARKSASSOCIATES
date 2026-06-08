@@ -325,6 +325,23 @@ select {
   color: rgba(255, 255, 255, 0.92);
 }
 
+/* Ensure eyebrow, headings and highlights are white inside the dark hero banner */
+.hero-banner .eyebrow {
+  color: #ffffff;
+}
+
+.hero-banner .hero-copy h1 {
+  color: #ffffff;
+}
+
+.hero-banner .hero-highlights strong {
+  color: #ffffff;
+}
+
+.hero-banner .hero-highlights span {
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .hero-banner .hero-actions {
   justify-content: center;
   gap: 1rem;
@@ -346,6 +363,42 @@ select {
   justify-content: center;
   text-align: center;
   padding: 1.3rem 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, border-color 260ms ease, background 300ms ease;
+  will-change: transform;
+  cursor: default;
+}
+
+.hero-banner .hero-highlights div::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle at 20% 20%, rgba(34,197,94,0.12), transparent 25%), radial-gradient(circle at 80% 80%, rgba(2,132,199,0.08), transparent 20%);
+  opacity: 0;
+  transform: rotate(8deg);
+  transition: opacity 320ms ease, transform 320ms ease;
+  pointer-events: none;
+}
+
+.hero-banner .hero-highlights div:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 28px 60px rgba(33, 51, 94, 0.445);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.473), rgba(255,255,255,0.01));
+  border-color: rgba(255, 255, 255, 0.575);
+}
+
+.hero-banner .hero-highlights div:hover::before {
+  opacity: 1;
+  transform: rotate(0deg) translateY(-6px);
+}
+
+.hero-banner .hero-highlights div:hover strong {
+  transform: translateY(-2px);
 }
 
 .hero-banner .hero-visual {
@@ -473,7 +526,7 @@ select {
 .hero-highlights span {
   display: block;
   margin-top: 0.35rem;
-  color: #fafcff;
+  color: #475569;
 }
 
 .hero-visual {
@@ -632,25 +685,60 @@ select {
 }
 
 .stats-card {
-  background: linear-gradient(180deg, #0d9488 0%, #0284c7 100%);
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.25), rgba(2, 132, 199, 0.25));
   color: #ffffff;
   border-radius: 1.25rem;
   padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  transition: background 340ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 260ms ease, box-shadow 260ms ease;
+  position: relative;
+  overflow: hidden;
+  will-change: background, transform;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0d9488 0%, #0284c7 100%);
+  opacity: 0.25;
+  transition: opacity 340ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+
+.stats-card:hover {
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.75), rgba(2, 132, 199, 0.75));
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(13, 148, 136, 0.25);
+}
+
+.stats-card:hover::before {
+  opacity: 0.75;
 }
 
 .stat-value {
   font-size: 2rem;
   margin: 0 0 0.5rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .stat-label {
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 .stat-card-green {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.25), rgba(13, 148, 136, 0.25));
+}
+
+.stat-card-green::before {
   background: linear-gradient(180deg, #22c55e 0%, #0d9488 100%);
+}
+
+.stat-card-green:hover {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.75), rgba(13, 148, 136, 0.75));
+  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.25);
 }
 
 .cta-banner {
