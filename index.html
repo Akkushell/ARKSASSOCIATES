@@ -116,14 +116,23 @@
 
     <section class="section about section-surface reveal" id="about">
       <div class="container about-grid">
-        <div>
+        <div class="about-content">
           <p class="eyebrow">About ARK'S ASSOCIATES</p>
           <h2>Your partner for fast approvals and reliable environmental systems.</h2>
-          <p>We help industrial and municipal clients navigate the most demanding regulatory standards with clear documentation, practical engineering, and focused execution. Our team works across India to ensure approvals are secure, systems are robust, and operations stay compliant.</p>
+          <p class="about-description">We help industrial and municipal clients navigate the most demanding regulatory standards with clear documentation, practical engineering, and focused execution. Our team works across India to ensure approvals are secure, systems are robust, and operations stay compliant.</p>
           <ul class="about-list">
-            <li><strong>Regulatory Expertise:</strong> CPCB, SPCB and CGWA applications handled end-to-end.</li>
-            <li><strong>Custom Engineering:</strong> Solutions tailored to project size, industry and discharge requirements.</li>
-            <li><strong>Operational Support:</strong> O&M, performance tracking and audit-ready reporting.</li>
+            <li>
+              <span class="list-icon">✔</span>
+              <div><strong>Regulatory Expertise:</strong> CPCB, SPCB and CGWA applications handled end-to-end.</div>
+            </li>
+            <li>
+              <span class="list-icon">✔</span>
+              <div><strong>Custom Engineering:</strong> Solutions tailored to project size, industry and discharge requirements.</div>
+            </li>
+            <li>
+              <span class="list-icon">✔</span>
+              <div><strong>Operational Support:</strong> O&M, performance tracking and audit-ready reporting.</div>
+            </li>
           </ul>
         </div>
 
@@ -166,52 +175,41 @@
           <p class="section-copy">Whether you need consent clearance, groundwater NOC, STP/ETP/ZLD engineering, or operations support, we respond quickly and help you move ahead with confidence.</p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-info card-surface">
-            <h3>Contact Details</h3>
-            <p>We deliver practical environmental solutions with a focus on approvals, reliability and performance. Reach out by email, phone or direct message on WhatsApp.</p>
-            <div class="contact-meta">
-              <div>
-                <span>📧</span>
-                <p><strong>Email</strong><br>arksassociates01@gmail.com</p>
-              </div>
-              <div>
-                <span>📞</span>
-                <p><strong>Phone</strong><br>+91 9975991129</p>
-              </div>
-            </div>
-          </div>
-
+        <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 680px; margin: 0 auto;">
           <form class="contact-form" id="whatsapp-contact-form">
             <h3>Project Inquiry</h3>
-            <label>
-              Full Name
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              Email Address
-              <input type="email" name="email" placeholder="you@company.com" required />
-            </label>
-            <label>
-              Phone (Optional)
-              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" />
-            </label>
-            <label>
-              Service Required
-              <select name="project_type" required>
-                <option value="">Select a service...</option>
-                <option value="CPCB/SPCB Consent Clearance">CPCB/SPCB Consent Clearance</option>
-                <option value="CGWA Groundwater NOC">CGWA Groundwater NOC</option>
-                <option value="Sewage Treatment Plant (STP)">Sewage Treatment Plant (STP)</option>
-                <option value="Effluent Treatment Plant (ETP)">Effluent Treatment Plant (ETP)</option>
-                <option value="Zero Liquid Discharge (ZLD)">Zero Liquid Discharge (ZLD)</option>
-                <option value="Operation & Maintenance">Operation & Maintenance</option>
-                <option value="Other Service">Other Service</option>
-              </select>
-            </label>
+            <div class="form-row">
+              <label>
+                Full Name
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" placeholder="you@company.com" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Phone (Optional)
+                <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" />
+              </label>
+              <label>
+                Service Required
+                <select name="project_type" required>
+                  <option value="">Select a service...</option>
+                  <option value="CPCB/SPCB Consent Clearance">CPCB/SPCB Consent Clearance</option>
+                  <option value="CGWA Groundwater NOC">CGWA Groundwater NOC</option>
+                  <option value="Sewage Treatment Plant (STP)">Sewage Treatment Plant (STP)</option>
+                  <option value="Effluent Treatment Plant (ETP)">Effluent Treatment Plant (ETP)</option>
+                  <option value="Zero Liquid Discharge (ZLD)">Zero Liquid Discharge (ZLD)</option>
+                  <option value="Operation & Maintenance">Operation & Maintenance</option>
+                  <option value="Other Service">Other Service</option>
+                </select>
+              </label>
+            </div>
             <label>
               Project Details
-              <textarea name="message" rows="5" placeholder="Describe your project, timeline, and goals..."></textarea>
+              <textarea name="message" rows="3" placeholder="Describe your project, timeline, and goals..."></textarea>
             </label>
             <div class="form-actions">
               <button type="button" id="send-whatsapp" class="button button-primary">Send via WhatsApp</button>
