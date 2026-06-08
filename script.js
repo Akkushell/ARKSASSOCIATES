@@ -58,24 +58,69 @@ if (whatsappButtons.length) {
 }
 
 const contactForm = document.getElementById('whatsapp-contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
 
-    const name = contactForm.querySelector('input[name="name"]').value.trim();
-    const email = contactForm.querySelector('input[name="email"]').value.trim();
-    const phone = contactForm.querySelector('input[name="phone"]').value.trim() || 'Not provided';
-    const project = contactForm.querySelector('select[name="project_type"]').value;
-    const message = contactForm.querySelector('textarea[name="message"]').value.trim();
+function gatherFormData() {
+  const name = contactForm.querySelector('input[name="name"]').value.trim();
+  const email = contactForm.querySelector('input[name="email"]').value.trim();
+  const phone = contactForm.querySelector('input[name="phone"]').value.trim() || 'Not provided';
+  const project = contactForm.querySelector('select[name="project_type"]').value || 'Not specified';
+  const message = contactForm.querySelector('textarea[name="message"]').value.trim() || 'No additional details provided';
+  return { name, email, phone, project, message };
+}
 
-    const text = `*New Project Inquiry - ARK'S ASSOCIATES*%0A%0A` +
-                 `*Name:* ${name}%0A` +
-                 `*Email:* ${email}%0A` +
-                 `*Phone:* ${phone}%0A` +
-                 `*Service:* ${project}%0A` +
-                 `*Details:* ${message}`;
+function buildProfessionalText(data) {
+  const timestamp = new Date().toLocaleString('en-GB', {
+    day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+  });
+  return `New Project Inquiry - ARK'S ASSOCIATES\n\n` +
+         `Name: ${data.name}\n` +
+         `Email: ${data.email}\n` +
+         `Phone: ${data.phone}\n` +
+         `Service: ${data.project}\n` +
+         `Details:\n${data.message}\n\n` +
+         `Submitted on: ${timestamp}`;
+}
 
-    window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`, '_blank');
+function buildEmailBody(data) {
+  const timestamp = new Date().toLocaleString();
+  return `New Project Inquiry - ARK'S ASSOCIATES\r\n\r\n` +
+         `Name: ${data.name}\r\n` +
+         `Email: ${data.email}\r\n` +
+         `Phone: ${data.phone}\r\n` +
+         `Service: ${data.project}\r\n` +
+         `Details: ${data.message}\r\n\r\n` +
+         `Submitted on: ${timestamp}`;
+}
+
+const sendWhatsappBtn = document.getElementById('send-whatsapp');
+const sendEmailBtn = document.getElementById('send-email');
+
+if (sendWhatsappBtn && contactForm) {
+  sendWhatsappBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const data = gatherFormData();
+    if (!data.name || !data.email || data.project === 'Not specified') {
+      alert('Please fill in your name, email and select a service before sending.');
+      return;
+    }
+    const text = buildProfessionalText(data);
+    const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+    contactForm.reset();
+  });
+}
+
+if (sendEmailBtn && contactForm) {
+  sendEmailBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const data = gatherFormData();
+    if (!data.name || !data.email || data.project === 'Not specified') {
+      alert('Please fill in your name, email and select a service before sending.');
+      return;
+    }
+    const subject = `New Project Inquiry from ${data.name}`;
+    const body = buildEmailBody(data);
+    window.location.href = `mailto:arksassociates01@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     contactForm.reset();
   });
 }
