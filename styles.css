@@ -750,42 +750,29 @@ select {
 
 .service-card {
   background: #ffffff;
-  border-radius: 1.25rem;
-  padding: 1.4rem;
-  border: 1px solid rgba(13,148,136,0.06);
-  box-shadow: 0 18px 40px rgba(15,23,42,0.06);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  border-radius: 1.5rem;
+  padding: 1.8rem;
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.04);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  align-items: center;
-  text-align: center;
+  gap: 1.1rem;
+  align-items: flex-start;
+  text-align: left;
   height: 100%;
-  min-height: 360px;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(15,23,42,0.12);
-  border-color: rgba(13,148,136,0.9);
-  background: rgba(13,148,136,0.25);
-}
-
-/* Ensure smooth fade for hover states */
-.service-card {
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 320ms ease, border-color 320ms ease;
-}
-
-.service-card {
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.08);
+  border-color: rgba(13, 148, 136, 0.4);
 }
 
 .service-card-head {
   display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
   align-items: center;
-  justify-content: center;
+  gap: 0.85rem;
 }
 
 .service-icon {
@@ -797,28 +784,58 @@ select {
   border-radius: 12px;
   background: linear-gradient(180deg,#e6fff6 0%, #d1fae5 100%);
   color: #0d9488;
-  font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.35rem;
+  flex-shrink: 0;
 }
 
 .service-card h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
+  color: #0f172a;
 }
 
-.service-card p {
-  margin: 0 auto;
+.service-desc {
+  margin: 0;
   color: #475569;
   line-height: 1.6;
-  flex: none;
-  max-width: 44rem;
+  font-size: 0.95rem;
+}
+
+.service-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: #334155;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.service-points li::before {
+  content: '•';
+  color: #0d9488;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .service-card .whatsapp-button {
   margin-top: auto;
-  align-self: center;
-  padding: 0.85rem 1.1rem;
+  align-self: stretch;
+  width: 100%;
+  padding: 0.9rem 1.1rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 @media (max-width: 1000px) {
