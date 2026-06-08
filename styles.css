@@ -1057,83 +1057,105 @@ select {
 }
 
 .about-grid {
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: start;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: #475569;
 }
 
 .about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 0;
+  margin: 0;
 }
 
 .about-list li {
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
   color: #334155;
-  line-height: 1.8;
+  line-height: 1.6;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.about-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  border-color: rgba(13, 148, 136, 0.35);
+}
+
+.list-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #d1fae5;
+  color: #0d9488;
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin-top: 0.15rem;
 }
 
 .about-visual {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .stats-card {
-  background: linear-gradient(180deg, rgba(13, 148, 136, 0.25), rgba(2, 132, 199, 0.25));
+  background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
   color: #ffffff;
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  backdrop-filter: blur(12px);
-  transition: background 340ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 260ms ease, box-shadow 260ms ease;
-  position: relative;
-  overflow: hidden;
-  will-change: background, transform;
-}
-
-.stats-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, #0d9488 0%, #0284c7 100%);
-  opacity: 0.25;
-  transition: opacity 340ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: -1;
+  border-radius: 1.5rem;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(13, 148, 136, 0.2);
+  transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
 .stats-card:hover {
-  background: linear-gradient(180deg, rgba(13, 148, 136, 0.75), rgba(2, 132, 199, 0.75));
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(13, 148, 136, 0.25);
-}
-
-.stats-card:hover::before {
-  opacity: 0.75;
+  box-shadow: 0 28px 60px rgba(13, 148, 136, 0.35);
 }
 
 .stat-value {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin: 0 0 0.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
 .stat-label {
   margin: 0;
-  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .stat-card-green {
-  background: linear-gradient(180deg, rgba(34, 197, 94, 0.25), rgba(13, 148, 136, 0.25));
-}
-
-.stat-card-green::before {
-  background: linear-gradient(180deg, #22c55e 0%, #0d9488 100%);
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
+  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.2);
 }
 
 .stat-card-green:hover {
-  background: linear-gradient(180deg, rgba(34, 197, 94, 0.75), rgba(13, 148, 136, 0.75));
-  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.25);
+  box-shadow: 0 28px 60px rgba(34, 197, 94, 0.35);
 }
 
 .cta-banner {
@@ -1157,8 +1179,8 @@ select {
 }
 
 .contact-grid {
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
 }
 
 .contact-info {
@@ -1264,6 +1286,23 @@ select {
 
 .contact-form button {
   width: fit-content;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.form-actions .button {
+  flex: 1;
+  width: 100%;
 }
 
 .contact-cards {
@@ -1548,5 +1587,13 @@ body.page-loaded {
 
   .about-visual {
     grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
   }
 }
