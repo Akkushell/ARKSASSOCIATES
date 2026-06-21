@@ -746,11 +746,18 @@ p {
   margin: 0 auto 2.2rem;
 }
 
+.logo-marquee-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .logo-marquee {
   position: relative;
   display: flex;
   overflow: hidden;
   gap: 1rem;
+  padding: 0.25rem 0;
+  min-height: 116px;
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
@@ -759,15 +766,20 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding-right: 1rem;
   min-width: max-content;
   animation: logoMarquee 44s linear infinite;
 }
 
+.logo-track-secondary {
+  animation-duration: 56s;
+}
+
 .logo-item {
-  width: 180px;
-  height: 92px;
-  padding: 1rem;
-  border-radius: 1rem;
+  width: 152px;
+  height: 84px;
+  padding: 0.8rem 0.95rem;
+  border-radius: 1.1rem;
   border: 1px solid rgba(13, 148, 136, 0.18);
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
@@ -779,7 +791,7 @@ p {
 
 .logo-item img {
   max-width: 100%;
-  max-height: 44px;
+  max-height: 36px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1165,8 +1177,12 @@ p {
 
 @media (max-width: 980px) {
   .logo-item {
-    width: 160px;
-    height: 86px;
+    width: 146px;
+    height: 82px;
+  }
+
+  .logo-marquee {
+    min-height: 108px;
   }
 
   .service-grid {
@@ -1292,13 +1308,21 @@ p {
   }
 
   .logo-item {
-    width: 142px;
-    height: 78px;
-    padding: 0.8rem;
+    width: 132px;
+    height: 74px;
+    padding: 0.75rem 0.85rem;
   }
 
   .logo-track {
     animation-duration: 34s;
+  }
+
+  .logo-track-secondary {
+    animation-duration: 42s;
+  }
+
+  .logo-marquee {
+    min-height: 96px;
   }
 
   .service-card {
