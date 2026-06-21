@@ -204,6 +204,13 @@ textarea:focus-visible {
   box-shadow: 0 14px 36px rgba(13, 148, 136, 0.18);
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
 .button-primary,
 .button-pill {
   background: var(--primary);
@@ -225,6 +232,20 @@ textarea:focus-visible {
   color: var(--primary);
   border-color: var(--primary);
   background: transparent;
+}
+
+.hero-banner .button-outline,
+.hero-glow .button-outline {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-banner .button-outline:hover,
+.hero-glow .button-outline:hover {
+  color: var(--primary-dark);
+  border-color: #ffffff;
+  background: #ffffff;
 }
 
 .site-nav a.button-pill {
@@ -395,6 +416,19 @@ p {
   gap: 1rem;
 }
 
+.hero-glow .hero-visual-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.22);
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.12);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.hero-glow .hero-visual-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(13, 148, 136, 0.5);
+  box-shadow: 0 30px 66px rgba(15, 23, 42, 0.16);
+}
+
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -404,6 +438,11 @@ p {
   color: #ffffff;
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.hero-glow .hero-pill {
+  background: rgba(13, 148, 136, 0.12);
+  color: #0f766e;
 }
 
 .hero-card-header {
@@ -416,6 +455,11 @@ p {
   color: #e2e8f0;
 }
 
+.hero-glow .hero-card-header p,
+.hero-glow .hero-card-footer span {
+  color: #334155;
+}
+
 .hero-feature-list {
   display: grid;
   gap: 0.65rem;
@@ -426,6 +470,19 @@ p {
   border-radius: 0.85rem;
   padding: 0.8rem 1rem;
   font-weight: 600;
+}
+
+.hero-glow .hero-feature-list div {
+  background: linear-gradient(145deg, rgba(13, 148, 136, 0.12), rgba(2, 132, 199, 0.08));
+  border: 1px solid rgba(13, 148, 136, 0.18);
+  color: #0f172a;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.hero-glow .hero-feature-list div:hover {
+  transform: translateX(4px);
+  border-color: rgba(13, 148, 136, 0.4);
+  background: linear-gradient(145deg, rgba(13, 148, 136, 0.2), rgba(2, 132, 199, 0.14));
 }
 
 .hero-card-footer {
@@ -485,14 +542,37 @@ p {
 .feature-card,
 .service-card {
   padding: 1.6rem;
-  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.feature-grid .feature-card {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .feature-card:hover,
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(13, 148, 136, 0.3);
+  transform: translateY(-7px);
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(13, 148, 136, 0.25) inset;
+  border-color: rgba(13, 148, 136, 0.48);
+}
+
+.feature-grid .feature-card:hover,
+.service-grid .service-card:hover {
+  background: linear-gradient(145deg, rgba(13, 148, 136, 0.25), rgba(2, 132, 199, 0.22));
+}
+
+.feature-grid .feature-card:hover h3,
+.service-grid .service-card:hover h3 {
+  color: #0f766e;
+}
+
+.feature-grid .feature-card:hover p,
+.service-grid .service-card:hover p,
+.service-grid .service-card:hover li {
+  color: #1e293b;
 }
 
 .feature-card p,
@@ -592,12 +672,15 @@ p {
 
 .service-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .service-card {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  min-height: 430px;
 }
 
 .service-card-head {
@@ -801,6 +884,21 @@ p {
   flex: 1;
 }
 
+.form-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  min-height: 1.2rem;
+  color: #64748b;
+}
+
+.form-status.success {
+  color: #0f766e;
+}
+
+.form-status.error {
+  color: #b91c1c;
+}
+
 .site-footer {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #ffffff;
@@ -853,9 +951,13 @@ p {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 980px) {
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-card {
+    min-height: 390px;
   }
 }
 
@@ -970,6 +1072,10 @@ p {
   .form-row,
   .form-actions {
     grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
   }
 
   .form-actions {
