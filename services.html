@@ -4,29 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0d9488" />
+  <meta name="description" content="Explore ARK'S ASSOCIATES services for CPCB/SPCB consent, CGWA NOC, STP/ETP/ZLD engineering, and environmental compliance support across India." />
   <title>ARK'S ASSOCIATES | Services</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <img src="LOGO1.jpg" alt="ARK'S ASSOCIATES logo" class="brand-logo" />
         <span>ARK'S ASSOCIATES</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav">
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" aria-current="page">Services</a>
         <a href="index.html#about">About</a>
         <a href="contact.html">Contact</a>
         <a href="contact.html" class="button button-pill button-primary">Contact Us</a>
@@ -34,7 +36,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero section hero-glow" id="top">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
@@ -89,7 +91,7 @@
               <li>Biological treatment design</li>
               <li>Performance tracking & compliance</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Sewage%20Treatment%20Plant%20(STP)." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Sewage%20Treatment%20Plant%20(STP)." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - STP
             </a>
           </article>
@@ -105,7 +107,7 @@
               <li>Chemical treatment & sludge handling</li>
               <li>Discharge quality assurance</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Effluent%20Treatment%20Plant%20(ETP)." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Effluent%20Treatment%20Plant%20(ETP)." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - ETP
             </a>
           </article>
@@ -121,7 +123,7 @@
               <li>Water recovery & recycling</li>
               <li>Zero discharge compliance</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Zero%20Liquid%20Discharge%20(ZLD)." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Zero%20Liquid%20Discharge%20(ZLD)." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - ZLD
             </a>
           </article>
@@ -137,7 +139,7 @@
               <li>Operator training & troubleshooting</li>
               <li>System performance audits</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Operation%20%26%20Maintenance." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Operation%20%26%20Maintenance." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - O&M
             </a>
           </article>
@@ -145,7 +147,7 @@
           <article class="service-card">
             <div class="service-card-head">
               <span class="service-icon">🌐</span>
-              <h3>Ground Water (CGWA) NOC</h3>
+              <h3>Groundwater (CGWA) NOC</h3>
             </div>
             <p class="service-desc">CGWA groundwater permission services and application management.</p>
             <ul class="service-points">
@@ -153,7 +155,7 @@
               <li>Drilling reviews & yield analysis</li>
               <li>Safe abstraction approvals</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Ground%20Water%20(CGWA)%20NOC." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Groundwater%20(CGWA)%20NOC." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - CGWA NOC
             </a>
           </article>
@@ -163,13 +165,13 @@
               <span class="service-icon">📜</span>
               <h3>CPCB/SPCB Consent Clearance</h3>
             </div>
-            <p class="service-desc">Complete consent services for establish and operate approvals.</p>
+            <p class="service-desc">Complete consent services for establishing and operating approvals.</p>
             <ul class="service-points">
               <li>Documentation & monitoring plans</li>
               <li>Supporting technical reports</li>
-              <li>Regulatory liaison & speed up</li>
+              <li>Regulatory liaison and faster approvals</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20CPCB/SPCB%20Consent%20Clearance." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20CPCB/SPCB%20Consent%20Clearance." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - Consent
             </a>
           </article>
@@ -185,7 +187,7 @@
               <li>Public hearing assistance</li>
               <li>Sustainable project delivery</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Environmental%20Clearance." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Environmental%20Clearance." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - Clearance
             </a>
           </article>
@@ -201,7 +203,7 @@
               <li>Equipment selection & optimization</li>
               <li>Reliable treated water quality</li>
             </ul>
-            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Water%20Treatment%20Systems." target="_blank" rel="noreferrer">
+            <a class="button button-primary whatsapp-button" href="https://wa.me/918956527367?text=Hello%20ARK%27S%20ASSOCIATES%2C%20I%27m%20interested%20in%20Water%20Treatment%20Systems." target="_blank" rel="noopener noreferrer">
               <span>💬</span> Inquiry - Treatment
             </a>
           </article>
@@ -222,11 +224,11 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 ARK'S ASSOCIATES | Pan India Environmental, Industrial Compliance & Sustainability Consulting Services</p>
+      <p>© 2026 ARK'S ASSOCIATES | Pan-India Environmental, Industrial Compliance and Sustainability Consulting Services</p>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/918956527367" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/918956527367" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <span>💬</span>
     WhatsApp
   </a>

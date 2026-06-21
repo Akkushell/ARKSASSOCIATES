@@ -1,12 +1,37 @@
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 const whatsappPhone = '918956527367';
+const header = document.querySelector('.site-header');
+
+document.body.classList.add('js-ready');
 
 if (navToggle && siteNav) {
+  navToggle.setAttribute('aria-expanded', 'false');
+
+  const closeNav = () => {
+    siteNav.classList.remove('active');
+    document.body.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+
   navToggle.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('active');
     document.body.classList.toggle('nav-open', isOpen);
     navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (event) => {
+    const isClickInsideMenu = siteNav.contains(event.target);
+    const isClickOnToggle = navToggle.contains(event.target);
+    if (!isClickInsideMenu && !isClickOnToggle && siteNav.classList.contains('active')) {
+      closeNav();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && siteNav.classList.contains('active')) {
+      closeNav();
+    }
   });
 }
 
@@ -24,7 +49,7 @@ navLinks.forEach((link) => {
         }
       }
     }
-    if (siteNav.classList.contains('active')) {
+    if (siteNav && siteNav.classList.contains('active')) {
       siteNav.classList.remove('active');
       document.body.classList.remove('nav-open');
       navToggle.setAttribute('aria-expanded', 'false');
@@ -33,37 +58,31 @@ navLinks.forEach((link) => {
 });
 
 const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.2,
-});
-
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
-});
-
-const whatsappButtons = document.querySelectorAll('.whatsapp-button');
-if (whatsappButtons.length) {
-  whatsappButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const serviceName = button.getAttribute('data-service') || 'environmental service request';
-      const message = `Hello ARK'S ASSOCIATES, I am interested in ${serviceName}. Please share details and next steps for my project.`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
-      window.open(whatsappUrl, '_blank');
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.2,
   });
+
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach((element) => element.classList.add('active'));
 }
 
 const contactForm = document.getElementById('whatsapp-contact-form');
 
 function gatherFormData() {
+  if (!contactForm) {
+    return null;
+  }
   const name = contactForm.querySelector('input[name="name"]').value.trim();
   const email = contactForm.querySelector('input[name="email"]').value.trim();
   const phone = contactForm.querySelector('input[name="phone"]').value.trim() || 'Not provided';
@@ -103,7 +122,7 @@ if (sendWhatsappBtn && contactForm) {
   sendWhatsappBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const data = gatherFormData();
-    if (!data.name || !data.email || data.project === 'Not specified') {
+    if (!data || !data.name || !data.email || data.project === 'Not specified') {
       alert('Please fill in your name, email and select a service before sending.');
       return;
     }
@@ -118,7 +137,7 @@ if (sendEmailBtn && contactForm) {
   sendEmailBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const data = gatherFormData();
-    if (!data.name || !data.email || data.project === 'Not specified') {
+    if (!data || !data.name || !data.email || data.project === 'Not specified') {
       alert('Please fill in your name, email and select a service before sending.');
       return;
     }
@@ -134,8 +153,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('scroll', () => {
-  const header = document.querySelector('.site-header');
   if (header) {
     header.classList.toggle('scrolled', window.scrollY > 24);
   }
-});
+}, { passive: true });

@@ -4,28 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0d9488" />
+  <meta name="description" content="ARK'S ASSOCIATES provides Pan-India environmental compliance consulting, including CPCB/SPCB approvals, CGWA NOC support, and STP/ETP/ZLD engineering services." />
   <title>ARK'S ASSOCIATES | Environmental Compliance & Groundwater Consulting</title>
+  <link rel="preload" as="image" href="1557202-yh.webp" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <img src="LOGO1.jpg" alt="ARK'S ASSOCIATES logo" class="brand-logo" />
         <span>ARK'S ASSOCIATES</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
         <a href="index.html#about">About</a>
         <a href="contact.html">Contact</a>
@@ -34,7 +37,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero section hero-banner" id="home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
@@ -52,11 +55,11 @@
             </div>
             <div>
               <strong>95%</strong>
-              <span>First-Time Permit Approval</span>
+              <span>First-Time Permit Approval Rate</span>
             </div>
             <div>
               <strong>8+</strong>
-              <span>Years Industry Experience</span>
+              <span>Years of Industry Experience</span>
             </div>
           </div>
         </div>
@@ -139,11 +142,11 @@
         <div class="about-visual">
           <div class="stats-card">
             <p class="stat-value">400+</p>
-            <p class="stat-label">Delivered Projects</p>
+            <p class="stat-label">Projects Delivered</p>
           </div>
           <div class="stats-card">
             <p class="stat-value">95%</p>
-            <p class="stat-label">First-Time Approval</p>
+            <p class="stat-label">First-Time Approval Rate</p>
           </div>
           <div class="stats-card">
             <p class="stat-value">8+</p>
@@ -170,12 +173,12 @@
     <section class="section contact section-surface reveal" id="contact">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Get In Touch</p>
+          <p class="eyebrow">Get in Touch</p>
           <h2>Speak with our environmental compliance experts.</h2>
           <p class="section-copy">Whether you need consent clearance, groundwater NOC, STP/ETP/ZLD engineering, or operations support, we respond quickly and help you move ahead with confidence.</p>
         </div>
 
-        <div class="contact-grid" style="grid-template-columns: 1fr; max-width: 680px; margin: 0 auto;">
+        <div class="contact-grid contact-grid-single">
           <form class="contact-form" id="whatsapp-contact-form">
             <h3>Project Inquiry</h3>
             <div class="form-row">
@@ -227,7 +230,7 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/918956527367" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/918956527367" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <span>💬</span>
     WhatsApp
   </a>
