@@ -1,7 +1,6 @@
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
 const whatsappPhone = '918956527367';
-const contactEmail = 'arksassociates01@gmail.com';
 const header = document.querySelector('.site-header');
 
 document.body.classList.add('js-ready');
@@ -105,39 +104,7 @@ function buildProfessionalText(data) {
          `Submitted on: ${timestamp}`;
 }
 
-function buildEmailBody(data) {
-  const timestamp = new Date().toLocaleString('en-GB', {
-    day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
-  });
-  return `New Project Inquiry - ARK'S ASSOCIATES\r\n\r\n` +
-         `Name: ${data.name}\r\n` +
-         `Email: ${data.email}\r\n` +
-         `Phone: ${data.phone}\r\n` +
-         `Service: ${data.project}\r\n` +
-         `Project Details:\r\n${data.message}\r\n\r\n` +
-         `Submitted on: ${timestamp}`;
-}
-
-function openPrefilledEmail(data) {
-  const subject = `New Project Inquiry from ${data.name}`;
-  const body = buildEmailBody(data);
-  const encodedSubject = encodeURIComponent(subject);
-  const encodedBody = encodeURIComponent(body);
-  const mailtoUrl = `mailto:${contactEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodedSubject}&body=${encodedBody}`;
-
-  window.location.href = mailtoUrl;
-
-  // Fallback for devices where no default mail client is configured.
-  setTimeout(() => {
-    if (document.hasFocus()) {
-      window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
-    }
-  }, 700);
-}
-
 const sendWhatsappBtn = document.getElementById('send-whatsapp');
-const sendEmailBtn = document.getElementById('send-email');
 const formStatus = document.createElement('p');
 
 function isFormReady(data) {
@@ -149,13 +116,12 @@ function isFormReady(data) {
 }
 
 function updateActionButtons() {
-  if (!sendWhatsappBtn || !sendEmailBtn) {
+  if (!sendWhatsappBtn) {
     return;
   }
   const data = gatherFormData();
   const ready = isFormReady(data);
   sendWhatsappBtn.disabled = !ready;
-  sendEmailBtn.disabled = !ready;
 }
 
 function setFormStatus(message, tone) {
@@ -225,23 +191,6 @@ if (sendWhatsappBtn && contactForm) {
     setTimeout(() => {
       resetButtonBusy(sendWhatsappBtn);
     }, 500);
-  });
-}
-
-if (sendEmailBtn && contactForm) {
-  sendEmailBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const data = gatherFormData();
-    if (!isFormReady(data)) {
-      setFormStatus('Please enter your name, a valid email address, and select a service.', 'error');
-      return;
-    }
-    setButtonBusy(sendEmailBtn, 'Opening Email...');
-    openPrefilledEmail(data);
-    setFormStatus('Email compose opened with your prefilled project details.', 'success');
-    setTimeout(() => {
-      resetButtonBusy(sendEmailBtn);
-    }, 900);
   });
 }
 
