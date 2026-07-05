@@ -330,6 +330,9 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: calc(100vh - 86px);
+  display: flex;
+  align-items: center;
 }
 
 .hero-glow {
@@ -349,9 +352,21 @@ p {
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.1rem, 4.4vw, 3.9rem);
+  font-size: clamp(1.95rem, 3.8vw, 3.3rem);
   letter-spacing: -0.045em;
   max-width: 14ch;
+}
+
+.hero-banner .hero-text {
+  font-size: 0.96rem;
+}
+
+.hero-banner .hero-copy {
+  gap: 0.9rem;
+}
+
+.hero-banner .hero-highlights {
+  margin-top: 0.45rem;
 }
 
 .hero-banner .eyebrow,
@@ -1287,15 +1302,38 @@ p {
   }
 
   .hero {
-    padding: 3rem 0;
+    padding: 2rem 0;
+  }
+
+  .hero-banner {
+    min-height: calc(100vh - 72px);
+    align-items: flex-start;
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.75rem, 7vw, 2.35rem);
+    font-size: clamp(1.6rem, 6.4vw, 2.1rem);
+  }
+
+  .hero-banner .hero-text {
+    font-size: 0.9rem;
   }
 
   .hero-highlights {
     grid-template-columns: 1fr;
+    gap: 0.55rem;
+    margin-top: 0.25rem;
+  }
+
+  .hero-highlights div {
+    padding: 0.8rem;
+  }
+
+  .hero-highlights strong {
+    font-size: 1.15rem;
+  }
+
+  .hero-highlights span {
+    font-size: 0.82rem;
   }
 
   .service-grid,
