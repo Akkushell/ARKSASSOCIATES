@@ -57,6 +57,12 @@ navLinks.forEach((link) => {
   });
 });
 
+document.addEventListener('contextmenu', (event) => {
+  if (event.target instanceof HTMLImageElement) {
+    event.preventDefault();
+  }
+});
+
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries) => {
