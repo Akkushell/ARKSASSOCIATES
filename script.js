@@ -7,17 +7,20 @@ document.body.classList.add('js-ready');
 
 if (navToggle && siteNav) {
   navToggle.setAttribute('aria-expanded', 'false');
+  siteNav.setAttribute('aria-hidden', 'true');
 
   const closeNav = () => {
     siteNav.classList.remove('active');
     document.body.classList.remove('nav-open');
     navToggle.setAttribute('aria-expanded', 'false');
+    siteNav.setAttribute('aria-hidden', 'true');
   };
 
   navToggle.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('active');
     document.body.classList.toggle('nav-open', isOpen);
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    siteNav.setAttribute('aria-hidden', String(!isOpen));
   });
 
   document.addEventListener('click', (event) => {
@@ -33,9 +36,15 @@ if (navToggle && siteNav) {
       closeNav();
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900 && siteNav.classList.contains('active')) {
+      closeNav();
+    }
+  });
 }
 
-const navLinks = document.querySelectorAll('.site-nav a[href^="#"], .site-nav a[href*="index.html#"]');
+const navLinks = document.querySelectorAll('.site-nav a');
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     const href = link.getAttribute('href');
@@ -52,7 +61,10 @@ navLinks.forEach((link) => {
     if (siteNav && siteNav.classList.contains('active')) {
       siteNav.classList.remove('active');
       document.body.classList.remove('nav-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.setAttribute('aria-hidden', 'true');
+      if (navToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 });
