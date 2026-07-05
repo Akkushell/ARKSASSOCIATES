@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Portrait of Mr. Abhinay Gajbhiye">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6c7a2"/>
+      <stop offset="100%" stop-color="#eaa77c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1000" rx="56" fill="url(#bg)"/>
+  <circle cx="630" cy="170" r="110" fill="#ffffff" opacity="0.1"/>
+  <circle cx="150" cy="850" r="180" fill="#ffffff" opacity="0.08"/>
+  <ellipse cx="400" cy="620" rx="250" ry="300" fill="#083344" opacity="0.18" filter="url(#shadow)"/>
+  <path d="M260 820c20-110 82-180 140-180h0c58 0 120 70 140 180" fill="#0f172a" opacity="0.75"/>
+  <path d="M250 395c0-95 69-170 150-170s150 75 150 170-69 165-150 165-150-70-150-165z" fill="url(#face)"/>
+  <path d="M250 390c10-90 72-150 150-150s140 60 150 150c-26-22-63-36-150-36s-124 14-150 36z" fill="#1f2937"/>
+  <path d="M260 360c45-40 88-58 140-58s95 18 140 58" fill="none" stroke="#111827" stroke-width="18" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="342" cy="430" r="14" fill="#111827"/>
+  <circle cx="458" cy="430" r="14" fill="#111827"/>
+  <path d="M350 490c18 18 82 18 100 0" fill="none" stroke="#a16207" stroke-width="16" stroke-linecap="round"/>
+  <path d="M190 940c18-125 96-200 210-200s192 75 210 200" fill="#123a52"/>
+  <path d="M310 610c30 30 150 30 180 0" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity="0.35"/>
+  <text x="400" y="920" text-anchor="middle" font-family="Sora, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">AG</text>
+</svg>
