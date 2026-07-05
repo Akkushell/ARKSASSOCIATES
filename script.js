@@ -63,6 +63,12 @@ document.addEventListener('contextmenu', (event) => {
   }
 });
 
+document.addEventListener('dragstart', (event) => {
+  if (event.target instanceof HTMLImageElement) {
+    event.preventDefault();
+  }
+});
+
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries) => {
