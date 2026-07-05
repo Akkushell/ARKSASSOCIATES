@@ -90,26 +90,16 @@ select {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  flex-shrink: 0;
   color: var(--primary);
   text-decoration: none;
-  font-family: 'Sora', 'Manrope', system-ui, sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.brand span {
-  font-size: clamp(1.15rem, 1.3vw, 1.35rem);
-  line-height: 1;
 }
 
 .brand-logo {
-  width: 72px;
-  height: 72px;
+  width: clamp(176px, 18vw, 236px);
+  max-height: 74px;
+  height: auto;
   object-fit: contain;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
 }
 
 .site-nav {
@@ -1363,8 +1353,8 @@ p {
   }
 
   .brand-logo {
-    width: 58px;
-    height: 58px;
+    width: min(156px, 42vw);
+    max-height: 54px;
   }
 
   .hero {
