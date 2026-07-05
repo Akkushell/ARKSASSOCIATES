@@ -1424,7 +1424,7 @@ p {
 
   .site-nav a {
     color: var(--text);
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0.85rem 1rem;
     border-radius: 1rem;
     border-bottom: 1px solid rgba(13, 148, 136, 0.08);
@@ -1513,6 +1513,53 @@ p {
     font-size: clamp(1.6rem, 6.4vw, 2.1rem);
   }
 
+  .section-heading,
+  .hero-copy,
+  .about-content,
+  .about-story-content,
+  .team-member-info,
+  .feature-card,
+  .service-card,
+  .work-card,
+  .benefit-item,
+  .cta-inner,
+  .footer-inner,
+  .footer-brand-block,
+  .footer-links-block,
+  .footer-services-block,
+  .footer-contact-block {
+    text-align: center;
+  }
+
+  .section-heading,
+  .hero-copy,
+  .about-list {
+    justify-items: center;
+  }
+
+  .hero-copy h1,
+  .section-copy,
+  .hero-text,
+  .about-description,
+  .about-story-content p,
+  .cta-inner p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-list li {
+    width: min(100%, 30rem);
+  }
+
+  .about-list li,
+  .service-points li,
+  .work-points li,
+  .contact-form label,
+  .contact-info-item,
+  .contact-info-footer {
+    text-align: left;
+  }
+
   .hero-banner .hero-text {
     font-size: 0.9rem;
   }
@@ -1548,12 +1595,14 @@ p {
 
   .footer-links-block a,
   .footer-contact-block a {
-    width: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer-bottom {
     flex-direction: column;
-    text-align: left;
+    text-align: center;
   }
 
   .logo-item {
@@ -1588,7 +1637,7 @@ p {
   }
 
   .contact-trust-strip {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
 }
@@ -1670,8 +1719,8 @@ p {
 }
 
 .team-member-image {
-  flex: 0 0 44%;
-  min-height: 320px;
+  flex: 0 0 34%;
+  min-height: 180px;
   background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(2, 132, 199, 0.1));
   display: flex;
   align-items: center;
@@ -1867,21 +1916,31 @@ p {
   }
 
   .team-member {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: stretch;
   }
 
   .team-member-image {
-    flex-basis: auto;
-    min-height: 240px;
-    width: 100%;
-    border-right: 0;
-    border-bottom: 1px solid rgba(13, 148, 136, 0.12);
+    flex: 0 0 32%;
+    min-height: 140px;
+    width: auto;
+    border-right: 1px solid rgba(13, 148, 136, 0.12);
+    border-bottom: 0;
     padding: 0;
   }
 
   .team-member-info {
-    padding: 1.2rem;
+    padding: 1rem 1.1rem;
     justify-content: flex-start;
+  }
+
+  .team-member-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .team-bio {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .work-grid {
